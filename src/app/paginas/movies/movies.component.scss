@@ -11,33 +11,44 @@ body {
   padding: 20px;
 }
 
-/* Estilos generales para la lista de películas */
+/* Estilos generales */
 h2 {
   font-size: 2.5em;
-  margin-bottom: 30px;
+  margin: 2px;
+  background-color: #000; /* Fondo negro */
+  padding: 10px;
+  border-radius: 8px;
   color: #ffcc00; /* Color dorado */
   text-align: center;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/* Lista de películas */
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: grid;
+  background-color: #000;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
   gap: 25px;
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  ul {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
   }
+}
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles medianos */
+@media (max-width: 768px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
   }
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+  ul {
     grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
   }
 }
@@ -52,66 +63,69 @@ li {
   transition: all 0.3s ease;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3),
     inset 0px 0px 15px rgba(255, 204, 0, 0.3); /* Brillo interno dorado */
+}
 
-  &:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(145deg, #333, #555); /* Cambio de fondo en hover */
-    box-shadow: 0px 8px 20px rgba(255, 204, 0, 0.6),
-      inset 0px 0px 20px rgba(255, 204, 0, 0.5); /* Más brillo en hover */
-  }
+li:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(145deg, #333, #555); /* Cambio de fondo en hover */
+  box-shadow: 0px 8px 20px rgba(255, 204, 0, 0.6),
+    inset 0px 0px 20px rgba(255, 204, 0, 0.5); /* Más brillo en hover */
+}
 
-  h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #ffcc00; /* Título en color dorado */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    text-align: center;
-  }
+li h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+   /* Fondo negro */
+  padding: 10px;
+  border-radius: 8px;
+  color: #ffcc00; /* Título en color dorado */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
 
-  img {
-    border-radius: 8px;
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 250px;
-    border: 2px solid #ffcc00; /* Borde dorado */
-    transition: transform 0.3s ease, border-color 0.3s ease;
+li img {
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 250px;
+  border: 2px solid #ffcc00; /* Borde dorado */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
 
-    &:hover {
-      transform: scale(1.05); /* Agranda la imagen en hover */
-      border-color: #ffffff; /* Cambia el borde a blanco */
-    }
-  }
+li img:hover {
+  transform: scale(1.05); /* Agranda la imagen en hover */
+  border-color: #ffffff; /* Cambia el borde a blanco */
+}
 
-  a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #ffcc00;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2em;
+li a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2em;
+}
 
-    &:hover {
-      color: #fff;
-      transform: scale(1.1);
-    }
-  }
+li a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
 
-  button {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+li button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-    &:hover {
-      background-color: #ff3300; /* Rojo más brillante */
-      box-shadow: 0px 8px 15px rgba(255, 51, 0, 0.5);
-    }
-  }
+li button:hover {
+  background-color: #ff3300; /* Rojo más brillante */
+  box-shadow: 0px 8px 15px rgba(255, 51, 0, 0.5);
 }

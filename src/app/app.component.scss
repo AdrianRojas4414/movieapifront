@@ -1,51 +1,73 @@
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fondo negro completo */
+    color: #fff;
+}
+
+/* Estilo para el título principal */
 h1 {
     text-align: center;
-    margin-top: 20px;
-    color: #333;
+    margin: 0; /* Sin espacio alrededor */
+    padding: 10px 0; /* Espaciado interno */
+    color: #ffd000; /* Dorado */
+    background-color: #000; /* Fondo negro */
+    text-transform: uppercase;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(255, 208, 0, 0.6); /* Sombra dorada */
 }
 
-hr {
-    margin: 20px 0;
-    border: 0;
-    border-top: 2px solid #ddd;
-}
-
+/* Barra de navegación */
 ul {
     list-style-type: none;
-    padding: 0;
+    margin: 0;
+    padding: 10px 0; /* Espaciado interno */
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: #000; /* Fondo negro */
 }
 
 ul li {
-    margin: 0 10px;
+    margin: 0 15px; /* Separación entre elementos */
 }
 
 ul li a {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    transition: background-color 0.3s;
+    color: #ffd000; /* Dorado */
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #ffd000; /* Borde dorado */
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 ul li a:hover {
-    background-color: #555;
+    background-color: #ffd000; /* Fondo dorado en hover */
+    color: #000; /* Texto negro en hover */
 }
 
+/* Línea horizontal */
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 2px solid #ffd000; /* Línea dorada */
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
     ul {
-    flex-direction: column;
-    align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     ul li {
-    margin-bottom: 10px;
+        margin: 10px 0;
     }
 
     h1 {
-    font-size: 24px;
+        font-size: 1.8em;
     }
 }
