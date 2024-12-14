@@ -3,10 +3,6 @@
   <li *ngFor="let movie of movies">
     <h3>{{ movie.titulo }}</h3>
     <img [src]="movie.poster" alt="{{ movie.titulo }}" width="100">
-    <p>Género: {{ movie.genero }}</p>
-    <p>Año de Estreno: {{ movie.anioEstreno }}</p>
-    <p>Duración: {{ movie.duracionMins }} minutos</p>
-    <p>Sinopsis: {{ movie.sinopsis }}</p>
     <a [routerLink]="['/movie', movie._id]">Ver detalles</a><br><br>
     <button (click)="eliminarPelicula(movie._id)">Eliminar</button>
   </li>
