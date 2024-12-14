@@ -1,1 +1,112 @@
-<p>movie-detail works!</p>
+<div class="movie-detail">
+  
+    <!-- Visualización de detalles de la película -->
+    <div class="movie-info">
+      <h3><strong>{{ movie.titulo }}</strong></h3>
+      <img [src]="movie.poster" alt="Póster de la película" class="movie-poster" />
+      <p><strong>Duración:</strong> {{ movie.duracionMins }} minutos</p>
+      <p><strong>Género:</strong> {{ movie.genero }}</p>
+      <p><strong>Año de Estreno:</strong> {{ movie.anioEstreno }}</p>
+      <p><strong>Sinopsis:</strong> {{ movie.sinopsis }}</p>
+      <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!movieForm.valid"
+        >
+          <a routerLink="/movies">Volver a Peliculas</a>
+        </button>
+    </div>
+  
+    <!-- Formulario de edición de película -->
+    <form (ngSubmit)="actualizarPelicula()" #movieForm="ngForm">
+      <!-- Título -->
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          [(ngModel)]="movie.titulo"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Póster -->
+      <div class="form-group">
+        <label for="poster">Póster (URL):</label>
+        <input
+          type="text"
+          id="poster"
+          name="poster"
+          [(ngModel)]="movie.poster"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Duración -->
+      <div class="form-group">
+        <label for="duracionMins">Duración (minutos):</label>
+        <input
+          type="number"
+          id="duracionMins"
+          name="duracionMins"
+          [(ngModel)]="movie.duracionMins"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Género -->
+      <div class="form-group">
+        <label for="genero">Género:</label>
+        <input
+          type="text"
+          id="genero"
+          name="genero"
+          [(ngModel)]="movie.genero"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Año de estreno -->
+      <div class="form-group">
+        <label for="anioEstreno">Año de Estreno:</label>
+        <input
+          type="number"
+          id="anioEstreno"
+          name="anioEstreno"
+          [(ngModel)]="movie.anioEstreno"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Sinopsis -->
+      <div class="form-group">
+        <label for="sinopsis">Sinopsis:</label>
+        <textarea
+          id="sinopsis"
+          name="sinopsis"
+          [(ngModel)]="movie.sinopsis"
+          class="form-control"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+  
+      <!-- Botón de actualización -->
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!movieForm.valid"
+        >
+          Actualizar
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -18,20 +18,21 @@ export class MoviesComponent implements OnInit{
     this.MoviesService.getMovies().subscribe(
       data => this.movies = data,
       error => console.log(error),
-      () => console.log('FIN')
+      () => console.log('Peliculas Obtenidas Exitosamente!')
     )
   }
 
-  eliminarPelicula(id: number): void {
-    this.MoviesService.deleteMovie(id.toString()).subscribe( // Convertir el id a string
+  eliminarPelicula(id: string): void {
+    this.MoviesService.deleteMovie(id).subscribe(
       {
         next: (updateMovie) => {
-          console.log('Producto Eliminado Exitosamente:', updateMovie);
-          alert('Producto Eliminado Exitosamente!\n' + JSON.stringify(updateMovie, null, 2));
+          console.log('Pelicula Eliminada Exitosamente!');
+          alert('Pelicula Eliminada Exitosamente!');
+          this.obtenerPeliculas();
         },
         error: (err) => {
-          console.error('Error Eliminando Producto:', err);
-          alert('Error Eliminando Producto.');
+          console.error('Error Eliminando Pelicula:', err);
+          alert('Error Eliminando Pelicula.');
         }
       }
     );

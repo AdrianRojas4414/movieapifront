@@ -27,7 +27,7 @@ export class MoviesService {
 
   // Actualizar una película existente
   updateMovie(id: string, movie: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, movie);
+    return this.http.patch(`${this.apiUrl}/${id}`, movie);
   }
 
   // Eliminar una película
