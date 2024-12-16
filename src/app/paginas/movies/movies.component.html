@@ -3,7 +3,7 @@
   <li *ngFor="let movie of movies">
     <h3>{{ movie.titulo }}</h3>
     <img [src]="movie.poster" alt="{{ movie.titulo }}" width="100">
-    <a [routerLink]="movie._id">Actualizar Pelicula</a><br><br>
+    <a [routerLink]="movie._id">Ver Detalles y Actualizar</a><br><br>
     <button (click)="eliminarPelicula(movie._id)">Eliminar</button>
   </li>
 </ul>
